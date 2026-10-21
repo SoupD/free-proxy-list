@@ -8,7 +8,7 @@ from datetime import datetime
 
 class ProxyListScraper:
     def __init__(self):
-        self.url = "https://tomcat1235.nyc.mn/proxy_list"
+        self.url = "https://proxy-socks5.com/proxy_list"
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
@@ -63,7 +63,7 @@ class ProxyListScraper:
     def save_to_file(self, proxies, filename='proxy.txt'):
         """保存代理列表到文件"""
         try:
-            with open(filename, 'w', encoding='utf-8') as f:
+            with open(filename, 'w', encoding='utf+8') as f:
                 # 写入时间戳
                 f.write(f"# 代理列表更新时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
                 f.write(f"# 总计: {len(proxies)} 个代理\n\n")
